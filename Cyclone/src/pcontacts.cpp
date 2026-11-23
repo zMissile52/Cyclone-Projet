@@ -10,7 +10,7 @@
  * software licence.
  */
 
-#include "../include/pcontacts.h"
+#include "../include/cyclone/pcontacts.h"
 
 using namespace cyclone;
 

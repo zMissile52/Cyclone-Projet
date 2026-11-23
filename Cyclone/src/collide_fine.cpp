@@ -10,7 +10,7 @@
  * software licence.
  */
 
-#include "../include/collide_fine.h"
+#include "../include/cyclone/collide_fine.h"
 #include <memory.h>
 #include <assert.h>
 #include <cstdlib>

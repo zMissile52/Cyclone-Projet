@@ -19,7 +19,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{df1584e0-83f5-41a2-9217-2a0eb6aadac1}</ProjectGuid>
+    <ProjectGuid>{cd53c06e-6e9b-4a97-a1e8-a83eaf78e770}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
     <WindowsTargetPlatformVersion>10.0.28000.0</WindowsTargetPlatformVersion>
     <ConfigurationType>Application</ConfigurationType>
@@ -57,6 +57,7 @@
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
       <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
       <WarningLevel>Level3</WarningLevel>
+      <AdditionalIncludeDirectories>..\SiegeLab_Library;..\Cyclone\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
@@ -87,6 +88,7 @@
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
       <WarningLevel>Level3</WarningLevel>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <AdditionalIncludeDirectories>..\SiegeLab_Library;..\Cyclone;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
@@ -108,8 +110,8 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\SiegeLabCore\SiegeLabCore.vcxproj">
-      <Project>{08213d7b-3c87-428d-b770-208419776582}</Project>
+    <ProjectReference Include="..\SiegeLab_Library\SiegeLab_Library.vcxproj">
+      <Project>{c034a437-ebea-479c-aa26-67f6f45dbca7}</Project>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

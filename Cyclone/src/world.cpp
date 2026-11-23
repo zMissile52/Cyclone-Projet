@@ -11,7 +11,7 @@
  */
 
 #include <cstdlib>
-#include "../include/world.h"
+#include "../include/cyclone/world.h"
 
 using namespace cyclone;
 

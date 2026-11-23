@@ -10,7 +10,7 @@
  * software licence.
  */
 
-#include "../include/body.h"
+#include "../include/cyclone/body.h"
 #include <memory.h>
 #include <assert.h>
 

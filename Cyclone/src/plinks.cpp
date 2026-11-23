@@ -10,7 +10,7 @@
  * software licence.
  */
 
-#include "../include/plinks.h"
+#include "../include/cyclone/plinks.h"
 
 using namespace cyclone;
 

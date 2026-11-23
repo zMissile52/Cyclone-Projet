@@ -10,7 +10,7 @@
  * software licence.
  */
 
-#include "../include/contacts.h"
+#include "../include/cyclone/contacts.h"
 #include <memory.h>
 #include <assert.h>
 

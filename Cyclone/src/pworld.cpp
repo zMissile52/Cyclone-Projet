@@ -11,7 +11,7 @@
  */
 
 #include <cstddef>
-#include "../include/pworld.h"
+#include "../include/cyclone/pworld.h"
 
 using namespace cyclone;
 

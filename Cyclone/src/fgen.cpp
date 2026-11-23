@@ -10,7 +10,7 @@
  * software license.
  */
 
-#include "../include/fgen.h"
+#include "../include/cyclone/fgen.h"
 
 using namespace cyclone;
 

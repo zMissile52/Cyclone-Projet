@@ -1,0 +1,10 @@
+<Solution>
+  <Configurations>
+    <Platform Name="x64" />
+    <Platform Name="x86" />
+  </Configurations>
+  <Project Path="Cyclone/Cyclone.vcxproj" Id="6023792b-c9c2-4fae-a3f2-6e68eb6d5b94" />
+  <Project Path="SiegeLab/SiegeLab.vcxproj" Id="62e4a79a-8b3a-4055-b59d-89ab466f9958" />
+  <Project Path="SiegeLab_Library/SiegeLab_Library.vcxproj" Id="c034a437-ebea-479c-aa26-67f6f45dbca7" />
+  <Project Path="Unit Tests/Unit Tests.vcxproj" Id="cd53c06e-6e9b-4a97-a1e8-a83eaf78e770" />
+</Solution>

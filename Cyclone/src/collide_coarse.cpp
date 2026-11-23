@@ -10,7 +10,7 @@
  * software licence.
  */
 
-#include "../include/collide_coarse.h"
+#include "../include/cyclone/collide_coarse.h"
 
 using namespace cyclone;
 

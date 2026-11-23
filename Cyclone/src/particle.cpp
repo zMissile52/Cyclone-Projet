@@ -11,7 +11,7 @@
  */
 
 #include <assert.h>
-#include "../include/particle.h"
+#include "../include/cyclone/particle.h"
 
 using namespace cyclone;
 

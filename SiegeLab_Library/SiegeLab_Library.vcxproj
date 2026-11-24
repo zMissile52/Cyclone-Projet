@@ -162,7 +162,6 @@
     <ClInclude Include="SceneObjects.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="EntityId.cpp" />
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="GameEntity.cpp" />
     <ClCompile Include="ObjectPool.cpp" />

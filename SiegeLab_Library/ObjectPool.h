@@ -8,7 +8,8 @@ class ObjectPool
 {
 private:
 	T* objects;
-	int pos = 0;
+	bool* isUsed;
+	int actualNBObjects = 0;
 
 public:
 	ObjectPool();
@@ -17,6 +18,8 @@ public:
 	void Create(Param... _arg);
 
 	T& Get(int _i);
+
+	void Destroy(int _i);
 
 };
 

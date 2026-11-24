@@ -1,0 +1,9 @@
+#ifndef SIEGELAB_LIBRARY_INPUTCONTROLLER_H_
+#define SIEGELAB_LIBRARY_INPUTCONTROLLER_H_
+
+struct InputController 
+{
+
+};
+
+#endif

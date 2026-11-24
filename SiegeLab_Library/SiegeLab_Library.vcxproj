@@ -153,18 +153,26 @@
     </Manifest>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="CameraManager.h" />
     <ClInclude Include="EntityId.h" />
     <ClInclude Include="framework.h" />
     <ClInclude Include="Game.h" />
     <ClInclude Include="GameEntity.h" />
+    <ClInclude Include="ICameraController.h" />
+    <ClInclude Include="InputController.h" />
     <ClInclude Include="ObjectPool.h" />
+    <ClInclude Include="OrbitCamera.h" />
     <ClInclude Include="pch.h" />
     <ClInclude Include="SceneObjects.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="CameraManager.cpp" />
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="GameEntity.cpp" />
+    <ClCompile Include="ICameraController.cpp" />
+    <ClCompile Include="InputController.cpp" />
     <ClCompile Include="ObjectPool.cpp" />
+    <ClCompile Include="OrbitCamera.cpp" />
     <ClCompile Include="pch.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>

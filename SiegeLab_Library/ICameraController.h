@@ -1,0 +1,8 @@
+#ifndef SIEGELAB_LIBRARY_ICAMERACONTROLLER_H_
+#define SIEGELAB_LIBRARY_ICAMERACONTROLLER_H_
+
+class ICameraController
+{
+};
+
+#endif

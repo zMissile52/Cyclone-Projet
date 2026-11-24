@@ -1,0 +1,9 @@
+#ifndef SIEGELAB_LIBRARY_CAMERAMANAGER_H_
+#define SIEGELAB_LIBRARY_CAMERAMANAGER_H_
+
+class CameraManager
+{
+
+};
+
+#endif

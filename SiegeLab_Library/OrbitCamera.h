@@ -1,22 +1,20 @@
 #ifndef SIEGELAB_LIBRARY_ORBITCAMERA_H_
 #define SIEGELAB_LIBRARY_ORBITCAMERA_H_
 
-#include "../Cyclone/include/cyclone/core.h"
 #include "InputController.h"
-
-using namespace cyclone;
+#include "raylib.h"
 
 class OrbitalCamera : public InputController
 {
 public:
-	OrbitalCamera(Vector3 target, double radius, double rotationSpeed);
+	void update(const InputController& input, double dt);
 
 private:
 	Vector3 target;
 	double radius;
 	double rotationSpeed;
-	double yaw;
-	double pitch;
+	double yaw = 0.0f;
+	double pitch = 0.0f;
 };
 
 #endif

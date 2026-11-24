@@ -170,7 +170,6 @@
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="GameEntity.cpp" />
     <ClCompile Include="ICameraController.cpp" />
-    <ClCompile Include="InputController.cpp" />
     <ClCompile Include="ObjectPool.cpp" />
     <ClCompile Include="OrbitCamera.cpp" />
     <ClCompile Include="pch.cpp">

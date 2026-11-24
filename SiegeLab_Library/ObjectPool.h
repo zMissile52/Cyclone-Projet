@@ -17,7 +17,7 @@ public:
 	template<typename ...Param>
 	void Create(Param... _arg);
 
-	T& Get(int _i);
+	T& Get(int _i); //TODO : remplace les int des index par l'entityID (regarde le doc)
 
 	void Destroy(int _i);
 

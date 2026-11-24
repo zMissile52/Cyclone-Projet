@@ -1,0 +1,7 @@
+#ifndef SIEGELAB_LIBRARY_OBJECTPOOL_H_
+#define SIEGELAB_LIBRARY_OBJECTPOOL_H_
+class ObjectPool
+{
+};
+
+#endif

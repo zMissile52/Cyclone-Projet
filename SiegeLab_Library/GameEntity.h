@@ -1,0 +1,7 @@
+#ifndef SIEGELAB_LIBRARY_GAMEENTITY_H_
+#define SIEGELAB_LIBRARY_GAMEENTITY_H_
+class GameEntity
+{
+};
+
+#endif

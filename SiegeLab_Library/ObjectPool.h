@@ -2,6 +2,7 @@
 #define SIEGELAB_LIBRARY_OBJECTPOOL_H_
 
 #include <stdexcept>
+#include "EntityId.h"
 
 template <typename T, const int Capacity>
 class ObjectPool
@@ -9,17 +10,18 @@ class ObjectPool
 private:
 	T* objects;
 	bool* isUsed;
+	EntityId* IdList;
 	int actualNBObjects = 0;
 
 public:
 	ObjectPool();
 
 	template<typename ...Param>
-	void Create(Param... _arg);
+	EntityId& Create(Param... _arg);
 
-	T& Get(int _i); //TODO : remplace les int des index par l'entityID (regarde le doc)
+	T& Get(EntityId& _i); //TODO : remplace les int des index par l'entityID (regarde le doc)
 
-	void Destroy(int _i);
+	void Destroy(EntityId& _i);
 
 };
 

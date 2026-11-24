@@ -14,34 +14,33 @@ TEST(TestCaseName, TestName) {
 TEST(ObjectPool, poolCapacity) {
 	ObjectPool<int, 3> pool;
 
-	pool.Create(10);
-	pool.Create(20);
-	pool.Create(30);
+	EntityId a = pool.Create(10);
+	EntityId b = pool.Create(20);
+	EntityId c = pool.Create(30);
+
 	EXPECT_ANY_THROW(pool.Create(40));
 
-	EXPECT_EQ(10, pool.Get(0));
-	EXPECT_EQ(20, pool.Get(1));
-	EXPECT_EQ(30, pool.Get(2));
-	EXPECT_THROW(pool.Get(3), std::length_error);
+	EXPECT_EQ(10, pool.Get(a));
+	EXPECT_EQ(20, pool.Get(b));
+	EXPECT_EQ(30, pool.Get(c));
+	c.slot = 3;
+	EXPECT_THROW(pool.Get(c), std::length_error);
 
 }
 
 TEST(ObjectPool, RecycledSlot) {
 	ObjectPool<int, 1> pool;
 	
-	int a = 7;
-	int b = 42;
+	EntityId a = pool.Create(7);
 
-	pool.Create(a);
+	EXPECT_EQ(7, pool.Get(a));
 
-	EXPECT_EQ(7, pool.Get(0));
-
-	pool.Destroy(0);
-	EXPECT_THROW(pool.Get(0), std::length_error);
+	pool.Destroy(a);
+	EXPECT_THROW(pool.Get(a), std::length_error);
 
 
-	pool.Create(b);
-	EXPECT_EQ(42, pool.Get(0));
+	pool.Create(42);
+	EXPECT_EQ(42, pool.Get(a));
 	
 
 }

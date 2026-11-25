@@ -13,11 +13,17 @@ public:
 	void reset() override;
 
 private:
-	Vector3 m_position{ 0.0f, 4.0f, 12.0f };
+	Vector3 m_initial_target{ 0.0f, 1.0f, 0.0f };
+	Vector3 m_initial_position{ 0.0f, 3.0f, 10.0f };
+	float m_intial_distance = 10.0f;
+	float m_initial_yaw = 0.0f;
+	float m_initial_pitch = 0.0f;
+	Vector3 m_position{ 0.0f, 3.0f, 10.0f };
 	Vector3 m_target{ 0.0f, 1.0f, 0.0f };
 	float m_yaw = 0.0f;
 	float m_pitch = 0.0f;
-	float m_distance = 12.0f;
+	float m_distance = 10.0f;
+	float m_degrees_per_pixel = 0.25f;
 };
 
 #endif

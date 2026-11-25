@@ -3,8 +3,9 @@
 InputSnapshot InputController::capture() const
 {
 	InputSnapshot snapshot;
-	snapshot.key_a = false;
-	snapshot.key_b = false;
+	snapshot.right_mouse_down = IsMouseButtonDown(MOUSE_BUTTON_RIGHT);
+	snapshot.mouse_delta = GetMouseDelta();
+	snapshot.reset_camera = IsKeyPressed(KEY_R);
 
 	return snapshot;
 }

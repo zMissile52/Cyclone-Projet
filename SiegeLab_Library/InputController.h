@@ -5,8 +5,9 @@
 
 struct InputSnapshot
 {
-	bool key_a = false;
-	bool key_b = false;
+	bool    right_mouse_down = false;
+	Vector2 mouse_delta{ 0.0f, 0.0f };
+	bool reset_camera = false;
 };
 
 class InputController

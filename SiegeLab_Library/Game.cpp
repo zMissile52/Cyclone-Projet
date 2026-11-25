@@ -28,7 +28,7 @@ void Game::Run()
         DrawCubeWires({ 0.0f, 1.0f, 0.0f }, 2.0f, 2.0f, 2.0f, MAROON);
         DrawGrid(10, 1.0f);
         EndMode3D();
-        DrawText("Clic droit + souris pour orbiter", 10, 10, 20, DARKGRAY);
+        DrawText("Press R to reset camera position", 20, 20, 30, BLACK);
         EndDrawing();
     }
 

@@ -46,6 +46,13 @@
       <Filter>Fichiers d%27en-tête</Filter>
     </ClInclude>
     <ClInclude Include="InputController.h">
+    <ClInclude Include="Projectile.h">
+      <Filter>Fichiers d%27en-tête</Filter>
+    </ClInclude>
+    <ClInclude Include="StandardProjectile.h">
+      <Filter>Fichiers d%27en-tête</Filter>
+    </ClInclude>
+    <ClInclude Include="HeavyProjectile.h">
       <Filter>Fichiers d%27en-tête</Filter>
     </ClInclude>
   </ItemGroup>
@@ -69,6 +76,13 @@
       <Filter>Fichiers sources</Filter>
     </ClCompile>
     <ClCompile Include="InputController.cpp">
+    <ClCompile Include="Projectile.cpp">
+      <Filter>Fichiers sources</Filter>
+    </ClCompile>
+    <ClCompile Include="StandardProjectile.cpp">
+      <Filter>Fichiers sources</Filter>
+    </ClCompile>
+    <ClCompile Include="HeavyProjectile.cpp">
       <Filter>Fichiers sources</Filter>
     </ClCompile>
   </ItemGroup>

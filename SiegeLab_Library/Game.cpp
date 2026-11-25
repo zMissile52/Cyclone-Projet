@@ -2,33 +2,35 @@
 #include "framework.h"
 
 #include "Game.h"
+#include "InputController.h"
+#include "OrbitCamera.h"
 
 #include "raylib.h"
 
 void Game::Run()
 {
-	// Tell the window to use vsync and work on high DPI displays
-	SetConfigFlags(FLAG_VSYNC_HINT | FLAG_WINDOW_HIGHDPI);
+    InitWindow(1280, 720, "Test Camera");
+    SetTargetFPS(60);
 
-	// Create the window and OpenGL context
-	InitWindow(800, 600, "Hello Raylib");
+    InputController input;
+    OrbitCamera camera;
 
-	// game loop
-	while (!WindowShouldClose())		// run the loop until the user presses ESCAPE or presses the Close button on the window
-	{
-		// drawing
-		BeginDrawing();
+    while (!WindowShouldClose())
+    {
+        float dt = GetFrameTime();
+        InputSnapshot snapshot = input.capture();
+        camera.update(snapshot, dt);
 
-		// Setup the back buffer for drawing (clear color and depth buffers)
-		ClearBackground(BLACK);
+        BeginDrawing();
+        ClearBackground(RAYWHITE);
+        BeginMode3D(camera.getCamera());
+        DrawCube({ 0.0f, 1.0f, 0.0f }, 2.0f, 2.0f, 2.0f, RED);
+        DrawCubeWires({ 0.0f, 1.0f, 0.0f }, 2.0f, 2.0f, 2.0f, MAROON);
+        DrawGrid(10, 1.0f);
+        EndMode3D();
+        DrawText("Clic droit + souris pour orbiter", 10, 10, 20, DARKGRAY);
+        EndDrawing();
+    }
 
-		// draw some text using the default font
-		DrawText("Hello Raylib", 200, 200, 20, WHITE);
-
-		// end the frame and get ready for the next one  (display frame, poll input, etc...)
-		EndDrawing();
-	}
-
-	// destroy the window and cleanup the OpenGL context
-	CloseWindow();
+    CloseWindow();
 }

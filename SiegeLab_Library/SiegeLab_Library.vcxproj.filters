@@ -68,9 +68,6 @@
     <ClCompile Include="CameraManager.cpp">
       <Filter>Fichiers sources</Filter>
     </ClCompile>
-    <ClCompile Include="ICameraController.cpp">
-      <Filter>Fichiers sources</Filter>
-    </ClCompile>
     <ClCompile Include="OrbitCamera.cpp">
       <Filter>Fichiers sources</Filter>
     </ClCompile>

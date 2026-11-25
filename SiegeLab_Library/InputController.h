@@ -3,13 +3,24 @@
 
 #include "raylib.h"
 
-struct InputController 
+class InputController
 {
-	bool rmbDown = false;
-	Vector2 mouseDelta = { 0.0f, 0.0f };
-	float mouseWheel = 0.0f;
-	float yawAxis = 0.0f;
-	float pitchAxis = 0.0f;
+public:
+	void Update();
+	bool    IsRightMouseDown() const;
+	Vector2 GetMouseDelta() const;
+	float   GetWheelMove() const;
+	float   GetYawAxis() const;
+	float   GetPitchAxis() const;
+	float   GetZoomAxis() const;
+
+private:
+	bool    m_right_mouse_down = false;
+	Vector2 m_mouse_delta{ 0.0f, 0.0f };
+	float   m_wheel_move = 0.0f;
+	float   m_yaw_axis = 0.0f;
+	float   m_pitch_axis = 0.0f;
+	float   m_zoom_axis = 0.0f;
 };
 
 #endif

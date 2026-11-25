@@ -11,10 +11,9 @@ public:
 	void fire(cyclone::CollisionSphere _settings);
 	void draw()const override;
 	void registerPhysics(SceneObjects& _world) override;
-
-	cyclone::CollisionSphere getSphere() { return m_sphere; }
-
 	virtual void configurePhysics() = 0;
+
+	const cyclone::CollisionSphere& GetSphere() { return m_sphere; }
 
 private:
 	cyclone::CollisionSphere m_sphere;

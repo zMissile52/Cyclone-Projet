@@ -1,5 +1,9 @@
 #include "Projectile.h"
 
+void Projectile::fire(cyclone::CollisionSphere _settings)
+{
+}
+
 void Projectile::draw() const
 {
 

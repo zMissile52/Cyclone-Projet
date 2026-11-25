@@ -3,6 +3,8 @@
 
 #include <cyclone/body.h>
 
+class SceneObjects;
+
 class GameEntity
 {
 public:
@@ -10,7 +12,7 @@ public:
 	virtual void draw() const = 0;
 	virtual void registerPhysics(SceneObjects& _world) = 0;
 
-	cyclone::RigidBody getBody() { return m_body; }
+	const cyclone::RigidBody& GetBody() { return m_body; }
 
 private:
 	cyclone::RigidBody m_body;

@@ -14,11 +14,11 @@ public:
 
 	template<typename T, typename... Args>
 		requires std::derived_from<T, GameEntity> && (!std::is_abstract_v<T>)
-	EntityId createEntity(Args&&... args); //TODO
+	EntityId createEntity(Args&&... args);
 	
 
-	GameEntity* get(EntityId id); //TODO
-	void flushRemovals();         //TODO 
+	GameEntity* get(EntityId id);
+	void flushRemovals();
 
 private:
 	ObjectPool<GameEntity*, 20> gameObjects;

@@ -19,6 +19,7 @@ inline T& ObjectPool<T, Capacity>::Get(EntityId& _i)
 {
 	if (_i.slot < 0 || _i.slot >= Capacity) throw std::length_error("ObjectPool::Get : index not between [0, capacity]");
 	if (actualNBObjects <= 0) throw std::length_error("ObjectPool::Get : objectpool is empty");
+	if (_i.generation != IdList[_i.slot].generation) throw std::invalid_argument("ObjectPool::Get : id invalid");
 
 	return objects[_i.slot];
 }
@@ -35,10 +36,27 @@ inline void ObjectPool<T, Capacity>::Destroy(EntityId& _i)
 	
 }
 
+template<typename T, int Capacity>
+inline EntityId ObjectPool<T, Capacity>::GetId(int _i) const
+{
+	return IdList[_i];
+}
+
+template<typename T, int Capacity>
+inline void ObjectPool<T, Capacity>::Clear()
+{
+	for (uint32_t i = 0; i < Capacity; i++) {
+		isUsed[i] = false;
+		objects[i] = T{};
+		IdList[i].generation = 0;
+		actualNBObjects = 0;
+	}
+}
+
 
 template<typename T, const int Capacity>
 template<typename... Param>
-inline EntityId& ObjectPool<T, Capacity>::Create(Param... _arg)
+inline EntityId ObjectPool<T, Capacity>::Create(Param... _arg)
 {
 	if (Capacity <= actualNBObjects) throw std::length_error("ObjectPool::Create : objectpool is full"); 
 

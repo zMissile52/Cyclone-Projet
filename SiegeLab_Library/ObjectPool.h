@@ -17,11 +17,15 @@ public:
 	ObjectPool();
 
 	template<typename ...Param>
-	EntityId& Create(Param... _arg);
+	EntityId Create(Param... _arg);
 
 	T& Get(EntityId& _i); //TODO : remplace les int des index par l'entityID (regarde le doc)
 
 	void Destroy(EntityId& _i);
+
+	EntityId GetId(int _i) const;
+
+	void Clear();
 
 };
 

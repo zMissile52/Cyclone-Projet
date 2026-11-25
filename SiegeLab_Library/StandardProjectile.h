@@ -1,8 +1,12 @@
-#pragma once
+#ifndef SIEGELAB_LIBRARY_STANDARDPROJECTILE_H_
+#define SIEGELAB_LIBRARY_STANDARDPROJECTILE_H_
+
 #include "Projectile.h"
+
 class StandardProjectile : public Projectile
 {
 public:
-	void configurePhysics();
+	void configurePhysics() override;
 };
 
+#endif

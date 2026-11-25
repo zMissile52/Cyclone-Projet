@@ -1,25 +1,23 @@
-#pragma once
+#ifndef SIEGELAB_LIBRARY_PROJECTILE_H_
+#define SIEGELAB_LIBRARY_PROJECTILE_H_
+
 #include "GameEntity.h"
 #include "SceneObjects.h"
-#include <cyclone/particle.h>
-
-struct Settings {
-
-};
+#include <cyclone/collide_fine.h>
 
 class Projectile : public GameEntity
 {
 public:
-	virtual void fire(Settings _set) {};
+	void fire(cyclone::CollisionSphere _settings);
+	void draw()const override;
+	void registerPhysics(SceneObjects& _world) override;
 
-	virtual void draw() const = 0;
+	cyclone::CollisionSphere getSphere() { return m_sphere; }
 
-	virtual void registerPhysics(SceneObjects _world) {};
-protected:
-	//TODO CollisionSphere
-	cyclone::Particle p;
+	virtual void configurePhysics() = 0;
 
-	double mass = 0;
-	double radius = 1;
+private:
+	cyclone::CollisionSphere m_sphere;
 };
 
+#endif

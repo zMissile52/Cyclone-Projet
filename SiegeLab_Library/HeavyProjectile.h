@@ -1,10 +1,12 @@
-#pragma once
+#ifndef SIEGELAB_LIBRARY_HEAVYPROJECTILE_H_
+#define SIEGELAB_LIBRARY_HEAVYPROJECTILE_H_
+
 #include "Projectile.h"
+
 class HeavyProjectile : public Projectile
 {
 public:
-	void configurePhysics();
-
-
+	void configurePhysics() override;
 };
 
+#endif

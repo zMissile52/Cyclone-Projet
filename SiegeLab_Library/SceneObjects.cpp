@@ -7,7 +7,7 @@ SceneObjects::~SceneObjects()
 
 GameEntity* SceneObjects::get(EntityId id)
 {
-    return nullptr;
+    return gameObjects.Get(id);
 }
 
 void SceneObjects::flushRemovals()

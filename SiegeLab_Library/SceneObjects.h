@@ -14,17 +14,16 @@ public:
 
 	template<typename T, typename... Args>
 		requires std::derived_from<T, GameEntity> && (!std::is_abstract_v<T>)
-
-	EntityId createEntity(Args&&... args) //TODO
-	{
-		return;
-	}
+	EntityId createEntity(Args&&... args); //TODO
+	
 
 	GameEntity* get(EntityId id); //TODO
 	void flushRemovals();         //TODO 
 
 private:
-
+	ObjectPool<GameEntity*, 20> gameObjects;
 };
 
 #endif
+
+#include "SceneObjects.inl"

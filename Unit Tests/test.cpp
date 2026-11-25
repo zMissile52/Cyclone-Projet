@@ -3,14 +3,7 @@
 #include <cyclone/cyclone.h>
 #include <ObjectPool.h>
 
-TEST(TestCaseName, TestName) {
-
-	Game game;
-
-  EXPECT_EQ(1, 1);
-  EXPECT_TRUE(true);
-}
-
+// Test ObjectPool
 TEST(ObjectPool, poolCapacity) {
 	ObjectPool<int, 3> pool;
 
@@ -77,3 +70,4 @@ TEST(ObjectPool, ClearInvalidatesHandles) {
 
 	EXPECT_EQ(30, pool.Get(c));
 }
+

@@ -23,9 +23,12 @@ public:
 
 	void Destroy(EntityId& _i);
 
+	void Clear();
+	
 	EntityId GetId(int _i) const;
 
-	void Clear();
+	//TODO fonction non verifié
+	T* ForEach(T _model);
 
 };
 

@@ -53,6 +53,23 @@ inline void ObjectPool<T, Capacity>::Clear()
 	}
 }
 
+template<typename T, int Capacity>
+inline T* ObjectPool<T, Capacity>::ForEach(T _model)
+{
+	uint32_t size = 0;
+	T* list;
+	for (int i = 0; i < Capacity; i++) {
+		if (isUsed[i]) {
+			if (_model == objects[i]) {
+				list[0] = objects[i];
+				size++;
+			}
+		}
+	}
+
+	return list;
+}
+
 
 template<typename T, const int Capacity>
 template<typename... Param>

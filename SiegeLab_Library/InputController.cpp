@@ -18,8 +18,8 @@ InputSnapshot InputController::capture() const
 	snapshot.isPressedE = IsKeyDown(KEY_E);
 
 
-	snapshot.isPressed1 = IsKeyDown(KEY_ONE);
-	snapshot.isPressed2 = IsKeyDown(KEY_TWO);
+	snapshot.isPressed1 = IsKeyPressed(KEY_ONE);
+	snapshot.isPressed2 = IsKeyPressed(KEY_TWO);
 
 	snapshot.add_speed_orient = IsKeyPressed(KEY_P);
 	snapshot.remove_speed_orient = IsKeyPressed(KEY_O);

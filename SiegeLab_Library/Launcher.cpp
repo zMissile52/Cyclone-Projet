@@ -1,6 +1,5 @@
 #include "Launcher.h"
 #include <algorithm>
-#include <numbers>
 #include <cmath>
 #include <iostream>
 
@@ -51,8 +50,8 @@ void Launcher::aim(const InputSnapshot _settings, float _dt)
     }
 
 
-    double rotaPitch = pitch * std::numbers::pi / 180; // en radian
-    double rotaYaw = yaw * std::numbers::pi / 180;
+    double rotaPitch = pitch * DEG2RAD; // en radian
+    double rotaYaw = yaw * DEG2RAD;
 
     previousDir = shotSets.direction;
 

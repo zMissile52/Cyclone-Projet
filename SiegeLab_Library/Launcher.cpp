@@ -1,6 +1,5 @@
 #include "Launcher.h"
 #include <algorithm>
-#include <cmath>
 #include <iostream>
 
 void Launcher::aim(const InputSnapshot _settings, float _dt)
@@ -55,9 +54,9 @@ void Launcher::aim(const InputSnapshot _settings, float _dt)
 
     previousDir = shotSets.direction;
 
-    shotSets.direction.x = std::sin(rotaYaw) * std::cos(rotaPitch);
-    shotSets.direction.y = -std::sin(rotaPitch);
-    shotSets.direction.z = std::cos(rotaYaw) * std::cos(rotaPitch);
+    shotSets.direction.x = sinf(rotaYaw) * cosf(rotaPitch);
+    shotSets.direction.y = -sinf(rotaPitch);
+    shotSets.direction.z = cosf(rotaYaw) * cosf(rotaPitch);
 
     if (previousDir != shotSets.direction) {
         std::cout << "direction : "

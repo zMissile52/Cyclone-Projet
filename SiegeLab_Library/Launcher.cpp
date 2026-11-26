@@ -1,16 +1,19 @@
 #include "Launcher.h"
 #include <algorithm>
+#include <numbers>
+#include <cmath>
+#include <iostream>
 
 void Launcher::aim(const InputSnapshot _settings, float _dt)
 {
 
-    double budget = _dt * 0.25;//TODO mettre le multiplicateur speed * dt
+    double budget = _dt * speed_orient;//TODO mettre le multiplicateur speed * dt
     
     // azimuth
-    if (_settings.isPressedA) {
+    if (_settings.isPressedD) {
         yaw = std::clamp<double>(yaw - budget, -30.0, 30.0); 
     }
-    if (_settings.isPressedD) {
+    if (_settings.isPressedA) {
         yaw = std::clamp<double>(yaw + budget, -30.0, 30.0);
     }
 
@@ -29,12 +32,50 @@ void Launcher::aim(const InputSnapshot _settings, float _dt)
     if (_settings.isPressedE) {
         speed = std::clamp<double>(speed + budget, 8.0, 22.0);
     }
+
+    // weapon change
+    if (_settings.isPressed1) {
+        shotSets.projectileKind = ProjectileType::STANDARD;
+    }
+    if (_settings.isPressed2) {
+        shotSets.projectileKind = ProjectileType::HEAVY;
+    }
+
+    // speed orientation
+    double step = 20;
+    if (_settings.add_speed_orient) {
+        speed_orient = std::clamp<double>(speed_orient + step, 20.0, 100.0);
+    }
+    if (_settings.remove_speed_orient) {
+        speed_orient = std::clamp<double>(speed_orient - step, 20.0, 100.0);
+    }
+
+
+    double rotaPitch = pitch * std::numbers::pi / 180; // en radian
+    double rotaYaw = yaw * std::numbers::pi / 180;
+
+    previousDir = shotSets.direction;
+
+    shotSets.direction.x = std::sin(rotaYaw) * std::cos(rotaPitch);
+    shotSets.direction.y = -std::sin(rotaPitch);
+    shotSets.direction.z = std::cos(rotaYaw) * std::cos(rotaPitch);
+
+    if (previousDir != shotSets.direction) {
+        std::cout << "direction : "
+            << shotSets.direction.x
+            << ", "
+            << shotSets.direction.y
+            << ", "
+            << shotSets.direction.z
+            << std::endl;
+
+        std::cout << "speed_orient : " << speed_orient<< std::endl;
+    }
+    
 }
 
 ShotSettings& Launcher::shotSettings()
 {
-    shotSets.direction = { 1, 0, 0 };
     
-
     return shotSets;
 }

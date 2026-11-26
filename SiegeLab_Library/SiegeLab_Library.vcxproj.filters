@@ -87,13 +87,13 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <None Include="packages.config" />
     <None Include="ObjectPool.inl">
       <Filter>Fichiers d%27en-tête</Filter>
     </None>
     <None Include="SceneObjects.inl">
       <Filter>Fichiers d%27en-tête</Filter>
     </None>
+    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Fichiers d%27en-tête">

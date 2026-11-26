@@ -8,20 +8,21 @@ InputSnapshot InputController::capture() const
 	snapshot.reset_camera = IsKeyPressed(KEY_R);
 
 
-	snapshot.isPressedA = IsKeyPressed(KEY_A);
-	snapshot.isPressedD = IsKeyPressed(KEY_D);
+	snapshot.isPressedA = IsKeyDown(KEY_A);
+	snapshot.isPressedD = IsKeyDown(KEY_D);
 
-	snapshot.isPressedW = IsKeyPressed(KEY_W);
-	snapshot.isPressedS = IsKeyPressed(KEY_S);
+	snapshot.isPressedW = IsKeyDown(KEY_W);
+	snapshot.isPressedS = IsKeyDown(KEY_S);
 
-	snapshot.isPressedQ = IsKeyPressed(KEY_Q);
-	snapshot.isPressedE = IsKeyPressed(KEY_E);
+	snapshot.isPressedQ = IsKeyDown(KEY_Q);
+	snapshot.isPressedE = IsKeyDown(KEY_E);
 
 
-	snapshot.isPressed1 = IsKeyPressed(KEY_ONE);
-	snapshot.isPressed2 = IsKeyPressed(KEY_TWO);
+	snapshot.isPressed1 = IsKeyDown(KEY_ONE);
+	snapshot.isPressed2 = IsKeyDown(KEY_TWO);
 
-	
+	snapshot.add_speed_orient = IsKeyPressed(KEY_P);
+	snapshot.remove_speed_orient = IsKeyPressed(KEY_O);
 
 	return snapshot;
 }

@@ -70,11 +70,11 @@ void Launcher::UpdateDirection()
     const float yaw_rad = static_cast<float>(-m_yaw_deg * DEG2RAD);
     const float pitch_rad = static_cast<float>(m_pitch_deg * DEG2RAD);
 
-    Vector4 initial_direction{ 1.0f, 0.0f, 0.0f, 0.0f };
+    const Vector3 initial_direction{ 1.0f, 0.0f, 0.0f };
     const Matrix rotation = MatrixMultiply(
         MatrixRotateZ(pitch_rad),
         MatrixRotateY(yaw_rad));
-    const Vector4 rotated_direction = Vector4Transform(initial_direction, rotation);
+    const Vector3 rotated_direction = Vector3Transform(initial_direction, rotation);
 
     cyclone::Vector3 direction(
         rotated_direction.x,

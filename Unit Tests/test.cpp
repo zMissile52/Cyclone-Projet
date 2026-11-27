@@ -1,7 +1,5 @@
 #include "pch.h"
-#include <Game.h>
-#include <cyclone/cyclone.h>
-#include <ObjectPool.h>
+
 
 // Test ObjectPool
 TEST(ObjectPool, poolCapacity) {
@@ -71,3 +69,20 @@ TEST(ObjectPool, ClearInvalidatesHandles) {
 	EXPECT_EQ(30, pool.Get(c));
 }
 
+
+
+#include "LauncherTest.inl"
+
+
+TEST_F(LauncherTest, ZeroAzimuthHasNoZComponent) {
+	Launcher l;
+	InputSnapshot i;
+	Set_Azimuth(l, 0);
+	Set_Elevation(l, 30);
+	l.aim(i, 0.25);
+
+	double ecart = 1e-4;
+
+	cyclone::Vector3 result(0.866, 0.5, 0.0);
+	EXPECT_TRUE(Ecart(l.shotSettings().direction, result, ecart));
+}

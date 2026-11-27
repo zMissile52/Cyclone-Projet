@@ -1,6 +1,7 @@
 #include "Launcher.h"
 #include <algorithm>
 #include <iostream>
+#include "raymath.h"
 
 void Launcher::aim(const InputSnapshot _settings, float _dt)
 {
@@ -48,15 +49,9 @@ void Launcher::aim(const InputSnapshot _settings, float _dt)
         speed_orient = std::clamp<double>(speed_orient - step, 20.0, 100.0);
     }
 
-
-    double rotaPitch = pitch * DEG2RAD; // en radian
-    double rotaYaw = yaw * DEG2RAD;
-
     previousDir = shotSets.direction;
 
-    shotSets.direction.x = sinf(rotaYaw) * cosf(rotaPitch);
-    shotSets.direction.y = -sinf(rotaPitch);
-    shotSets.direction.z = cosf(rotaYaw) * cosf(rotaPitch);
+    CalculDir();
 
     if (previousDir != shotSets.direction) {
         std::cout << "direction : "
@@ -71,6 +66,51 @@ void Launcher::aim(const InputSnapshot _settings, float _dt)
     }
     
 }
+
+cyclone::Vector3 Launcher::CalculDir()
+{
+    cyclone::Vector3 dir = { 1, 0, 0 };
+    float rotaPitch = (float)pitch * DEG2RAD; // en radian
+    float rotaYaw = (float)yaw * DEG2RAD;
+
+    Vector4 base = { 0 };
+    base.x = dir.x;
+    base.y = dir.y;
+    base.z = dir.z;
+    base.w = 0;
+    
+    base = base*MatrixRotateY(rotaPitch);
+    base = base*MatrixRotateZ(rotaYaw);
+    
+    shotSets.direction = { base.x, -base.z, base.y };
+    
+    //shotSets.direction.x = cosf(rotaYaw) * cosf(rotaPitch);
+    //shotSets.direction.y = sinf(rotaPitch);
+    //shotSets.direction.z = sinf(rotaYaw) * cosf(rotaPitch);
+
+    return shotSets.direction;
+}
+
+
+void Launcher::draw(InputSnapshot _snapshot, float _dt)
+{
+    //TODO draw launcher
+    Vector3 startPoint = { -5.0f, 0.75f, 0.0f };
+    aim(_snapshot, _dt);
+    cyclone::Vector3 launcherDir = shotSettings().direction;
+    double lengthLine = 10;
+    Vector3 movePoint =
+        Vector3(
+            startPoint.x + launcherDir.x * lengthLine,
+            startPoint.y + launcherDir.y * lengthLine,
+            startPoint.z + launcherDir.z * lengthLine
+        );
+
+    DrawLine3D(startPoint, movePoint, RED);
+    DrawCube(startPoint, 0.5f, 1.5f, 0.5f, BLUE);
+}
+
+
 
 ShotSettings& Launcher::shotSettings()
 {

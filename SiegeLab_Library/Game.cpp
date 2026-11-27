@@ -30,21 +30,7 @@ void Game::Run()
         DrawCube({ 0.0f, 1.0f, 0.0f }, 2.0f, 2.0f, 2.0f, RED);
         DrawCubeWires({ 0.0f, 1.0f, 0.0f }, 2.0f, 2.0f, 2.0f, MAROON);
 
-        //TODO draw launcher
-        Vector3 startPoint = { 0.0f, 0.75f, 5.0f };
-        launcher.aim(snapshot, dt);
-        cyclone::Vector3 launcherDir = launcher.shotSettings().direction;
-        double lengthLine = 10;
-        Vector3 movePoint = 
-            Vector3(
-                startPoint.x - launcherDir.x * lengthLine,
-                startPoint.y - launcherDir.y * lengthLine,
-                startPoint.z - launcherDir.z * lengthLine
-            );
-
-        DrawLine3D(startPoint, movePoint, RED);
-        DrawCube({ 0.0f, 0.75f, 5.0f }, 0.5f, 1.5f, 0.5f, BLUE);
-
+        launcher.draw(snapshot, dt);
 
         DrawGrid(10, 1.0f);
         EndMode3D();

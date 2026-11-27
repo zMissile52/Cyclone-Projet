@@ -79,10 +79,10 @@ cyclone::Vector3 Launcher::CalculDir()
     base.z = dir.z;
     base.w = 0;
     
-    base = base*MatrixRotateY(rotaPitch);
-    base = base*MatrixRotateZ(rotaYaw);
+    base = base*MatrixRotateZ(rotaPitch);
+    base = base*MatrixRotateY(rotaYaw);
     
-    shotSets.direction = { base.x, -base.z, base.y };
+    shotSets.direction = { base.x, base.y, base.z };
     
     //shotSets.direction.x = cosf(rotaYaw) * cosf(rotaPitch);
     //shotSets.direction.y = sinf(rotaPitch);

@@ -187,7 +187,6 @@
     <ClCompile Include="Projectile.cpp" />
     <ClCompile Include="SceneObjects.cpp" />
     <ClCompile Include="StandardProjectile.cpp" />
-    <ClCompile Include="ShotSettings.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Cyclone\Cyclone.vcxproj">

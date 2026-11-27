@@ -1,28 +1,21 @@
 #include "InputController.h"
 
-InputSnapshot InputController::capture() const
+InputSnapshot InputController::Capture() const
 {
-	InputSnapshot snapshot;
+	InputSnapshot snapshot{};
 	snapshot.right_mouse_down = IsMouseButtonDown(MOUSE_BUTTON_RIGHT);
 	snapshot.mouse_delta = GetMouseDelta();
 	snapshot.reset_camera = IsKeyPressed(KEY_R);
 
+	snapshot.move_left_a = IsKeyDown(KEY_A);
+	snapshot.move_right_d = IsKeyDown(KEY_D);
+	snapshot.pitch_up_w = IsKeyDown(KEY_W);
+	snapshot.pitch_down_s = IsKeyDown(KEY_S);
+	snapshot.speed_down_q = IsKeyDown(KEY_Q);
+	snapshot.speed_up_e = IsKeyDown(KEY_E);
 
-	snapshot.isPressedA = IsKeyDown(KEY_A);
-	snapshot.isPressedD = IsKeyDown(KEY_D);
-
-	snapshot.isPressedW = IsKeyDown(KEY_W);
-	snapshot.isPressedS = IsKeyDown(KEY_S);
-
-	snapshot.isPressedQ = IsKeyDown(KEY_Q);
-	snapshot.isPressedE = IsKeyDown(KEY_E);
-
-
-	snapshot.isPressed1 = IsKeyPressed(KEY_ONE);
-	snapshot.isPressed2 = IsKeyPressed(KEY_TWO);
-
-	snapshot.add_speed_orient = IsKeyPressed(KEY_P);
-	snapshot.remove_speed_orient = IsKeyPressed(KEY_O);
-
+	snapshot.select_standard_1 = IsKeyPressed(KEY_ONE);
+	snapshot.select_heavy_2 = IsKeyPressed(KEY_TWO);
+	snapshot.fire_pressed_space = IsKeyPressed(KEY_SPACE);
 	return snapshot;
 }

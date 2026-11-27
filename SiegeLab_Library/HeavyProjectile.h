@@ -6,7 +6,7 @@
 class HeavyProjectile : public Projectile
 {
 public:
-	void configurePhysics() override;
+	void ConfigurePhysics() override;
 };
 
 #endif

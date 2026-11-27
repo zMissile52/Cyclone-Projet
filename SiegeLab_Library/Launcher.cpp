@@ -10,26 +10,26 @@ void Launcher::aim(const InputSnapshot _settings, float _dt)
     
     // azimuth
     if (_settings.isPressedD) {
-        yaw = std::clamp<double>(yaw - budget, -30.0, 30.0); 
+        yaw = yaw - budget; 
     }
     if (_settings.isPressedA) {
-        yaw = std::clamp<double>(yaw + budget, -30.0, 30.0);
+        yaw = yaw + budget;
     }
 
     // elevation
     if (_settings.isPressedS) {
-        pitch = std::clamp<double>(pitch - budget, 5.0, 55.0);
+        pitch = pitch - budget;
     }
     if (_settings.isPressedW) {
-        pitch = std::clamp<double>(pitch + budget, 5.0, 55.0);
+        pitch = pitch + budget;
     }
 
     // speed
     if (_settings.isPressedQ) {
-        speed = std::clamp<double>(speed - budget, 8.0, 22.0);
+        speed = speed - budget;
     }
     if (_settings.isPressedE) {
-        speed = std::clamp<double>(speed + budget, 8.0, 22.0);
+        speed = speed + budget;
     }
 
     // weapon change
@@ -43,11 +43,17 @@ void Launcher::aim(const InputSnapshot _settings, float _dt)
     // speed orientation
     double step = 20;
     if (_settings.add_speed_orient) {
-        speed_orient = std::clamp<double>(speed_orient + step, 20.0, 100.0);
+        speed_orient = speed_orient + step;
     }
     if (_settings.remove_speed_orient) {
-        speed_orient = std::clamp<double>(speed_orient - step, 20.0, 100.0);
+        speed_orient = speed_orient - step;
     }
+
+    yaw = std::clamp<double>(yaw, -30.0, 30.0); ;
+    pitch = std::clamp<double>(pitch, 5.0, 55.0);
+    speed = std::clamp<double>(speed, 8.0, 22.0);
+    speed_orient = std::clamp<double>(speed_orient, 20.0, 100.0);
+
 
     previousDir = shotSets.direction;
 

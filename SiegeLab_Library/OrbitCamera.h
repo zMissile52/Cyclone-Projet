@@ -7,6 +7,7 @@
 
 class OrbitCamera : public ICameraController
 {
+	friend class OrbitCameraTest;
 public:
 	void update(const InputSnapshot& _input, float _dt) override;
 	Camera3D getCamera() override;

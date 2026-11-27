@@ -46,16 +46,22 @@
       <Filter>Fichiers d'en-tête</Filter>
     </ClInclude>
     <ClInclude Include="CameraManager.h">
-      <Filter>Fichiers d%27en-tête</Filter>
+      <Filter>Fichiers d'en-tête</Filter>
     </ClInclude>
     <ClInclude Include="ICameraController.h">
-      <Filter>Fichiers d%27en-tête</Filter>
+      <Filter>Fichiers d'en-tête</Filter>
     </ClInclude>
     <ClInclude Include="InputController.h">
-      <Filter>Fichiers d%27en-tête</Filter>
+      <Filter>Fichiers d'en-tête</Filter>
     </ClInclude>
     <ClInclude Include="OrbitCamera.h">
-      <Filter>Fichiers d%27en-tête</Filter>
+      <Filter>Fichiers d'en-tête</Filter>
+    </ClInclude>
+    <ClInclude Include="Launcher.h">
+      <Filter>Fichiers d'en-tête</Filter>
+    </ClInclude>
+    <ClInclude Include="ShotSettings.h">
+      <Filter>Fichiers d'en-tête</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -87,6 +93,12 @@
       <Filter>Fichiers sources</Filter>
     </ClCompile>
     <ClCompile Include="Projectile.cpp">
+      <Filter>Fichiers sources</Filter>
+    </ClCompile>
+    <ClCompile Include="Launcher.cpp">
+      <Filter>Fichiers sources</Filter>
+    </ClCompile>
+    <ClCompile Include="ShotSettings.cpp">
       <Filter>Fichiers sources</Filter>
     </ClCompile>
   </ItemGroup>

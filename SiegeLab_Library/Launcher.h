@@ -10,12 +10,13 @@ class Launcher
 {
 public:
     void Aim(const InputSnapshot& _input, float _dt);
+    void Draw() const;
+
     const ShotSettings& GetShotSettings() const { return m_shot_settings; }
     ShotSettings& MutableShotSettings() { return m_shot_settings; }
 
 private:
-    void UpdateAnglesAndSpeed(const InputSnapshot& _input,
-        float _dt);
+    void UpdateAnglesAndSpeed(const InputSnapshot& _input, float _dt);
     void UpdateDirection();
 
     double m_yaw_deg = 0.0;

@@ -20,7 +20,7 @@ namespace
 
     void StepProjectileFixed(Projectile& _proj, cyclone::ContactResolver& _resolver)
     {
-        cyclone::RigidBody& body = _proj.   Body();
+        cyclone::RigidBody& body = _proj.Body();
         body.integrate(kFixedDt);
         cyclone::CollisionSphere& sphere = _proj.MutableSphere();
         sphere.calculateInternals();
@@ -96,6 +96,7 @@ void Game::Run()
         {
             active_proj->Draw();
         }
+        launcher.Draw();
         DrawGrid(10, 1.0f);
         EndMode3D();
         EndDrawing();

@@ -77,19 +77,22 @@
     <ClCompile Include="ObjectPool.cpp">
       <Filter>Fichiers sources</Filter>
     </ClCompile>
-    <ClCompile Include="StandardProjectile.cpp">
+    <ClCompile Include="CameraManager.cpp">
       <Filter>Fichiers sources</Filter>
     </ClCompile>
-    <ClCompile Include="HeavyProjectile.cpp">
+    <ClCompile Include="OrbitCamera.cpp">
       <Filter>Fichiers sources</Filter>
     </ClCompile>
     <ClCompile Include="CameraManager.cpp">
       <Filter>Fichiers sources</Filter>
     </ClCompile>
-    <ClCompile Include="InputController.cpp">
+    <ClCompile Include="Projectile.cpp">
       <Filter>Fichiers sources</Filter>
     </ClCompile>
-    <ClCompile Include="OrbitCamera.cpp">
+    <ClCompile Include="StandardProjectile.cpp">
+      <Filter>Fichiers sources</Filter>
+    </ClCompile>
+    <ClCompile Include="InputController.cpp">
       <Filter>Fichiers sources</Filter>
     </ClCompile>
     <ClCompile Include="Projectile.cpp">
